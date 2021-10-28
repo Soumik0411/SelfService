@@ -1,5 +1,10 @@
 import React from 'react'
 import './CSS/Navbar.css'
+import {AiOutlineBell} from "react-icons/ai";
+import {BsEnvelopeOpen} from "react-icons/bs";
+import {BsCalendarDate} from "react-icons/bs";
+import {FaUserCircle} from "react-icons/fa";
+import {IoExitOutline} from "react-icons/io5";
 
 export default function Navbar() {
     return (
@@ -17,7 +22,7 @@ export default function Navbar() {
                     {/* DOC: Remove "dropdown-hoverable" and add data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to the below A element with dropdown-toggle class */}
                     <li className="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
                         <a href="/" className="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                            <i className="icon-bell" />
+                            <AiOutlineBell/>
                             <span className="badge badge-default"> 7 </span>
                         </a>
                         <ul className="dropdown-menu">
@@ -119,7 +124,7 @@ export default function Navbar() {
                     {/* DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte */}
                     <li className="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
                         <a href="/" className="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                            <i className="icon-envelope-open" />
+                            <  BsEnvelopeOpen />
                             <span className="badge badge-default"> 4 </span>
                         </a>
                         <ul className="dropdown-menu">
@@ -200,7 +205,7 @@ export default function Navbar() {
                     {/* DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte */}
                     <li className="dropdown dropdown-extended dropdown-tasks" id="header_task_bar">
                         <a href="/" className="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                            <i className="icon-calendar" />
+                            <BsCalendarDate />
                             <span className="badge badge-default"> 3 </span>
                         </a>
                         <ul className="dropdown-menu extended tasks">
@@ -312,9 +317,9 @@ export default function Navbar() {
                     {/* DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte */}
                     <li className="dropdown dropdown-user">
                         <a href="/" className="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                            <img alt="" className="img-circle" src="../assets/layouts/layout/img/avatar3_small.jpg" />
+                            <img alt="" className="img-circle" src="/assets/layouts/layout/img/avatar3_small.jpg" />
                             <span className="username username-hide-on-mobile"> Nick </span>
-                            <i className="fa fa-angle-down" />
+                            <FaUserCircle />
                         </a>
                         <ul className="dropdown-menu dropdown-menu-default">
                             <li>
@@ -353,7 +358,7 @@ export default function Navbar() {
                     {/* DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte */}
                     <li className="dropdown dropdown-quick-sidebar-toggler">
                         <a href="/" className="dropdown-toggle">
-                            <i className="icon-logout" />
+                            <IoExitOutline />
                         </a>
                     </li>
                     {/* END QUICK SIDEBAR TOGGLER */}

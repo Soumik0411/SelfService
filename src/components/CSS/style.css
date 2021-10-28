@@ -42,16 +42,16 @@
 }
 
 .snav{
-    flex:1 !important;
+    flex:1.5 !important;
 }
 .compcard{
-    flex:4;
+    flex:5;
     margin: 50px 20px !important;
-    margin-left: -70px !important;
+    margin-left: 0px !important;
 }
 
 .chart{
-    flex:4 !important;
+    flex:3 !important;
     margin-top: 50px;
 }
 .comp1,.comp2,.comp3{
@@ -104,7 +104,7 @@
 
 .card-text{ 
     font-weight: 400 !important;
-    font-size: 1.3rem !important;
+    font-size: 1.5rem !important;
     padding: 10px !important;
 }
 
@@ -138,5 +138,5 @@ h6{
 }
 
 .portlet{
-    width: 700px;
+    width: 600px;
 }

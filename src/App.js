@@ -5,6 +5,7 @@ import { render } from "react-dom";
 
 
 
+
 // import logo from './logo.svg';
 import './App.css';
 // import './components/CSS/stylog.css'
@@ -25,6 +26,7 @@ function App() {
       {/* <Login/> */}
       <Dashboard />
       <Footer/>
+
     </>
 
 

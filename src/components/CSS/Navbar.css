@@ -170,7 +170,18 @@ body > .navbar {
     padding-right: 10px;
     padding-left: 10px;
   }
+  .navbar-nav{
+    flex-direction: row;
+  }
   
+  .enav{
+    margin-top: -350px;
+  }
+
+  .page-logo{
+    margin-right: 1000px;
+    margin-left: -300px;
+  }
   
   @media (min-width: 980px) {
   .nav-collapse.collapse {

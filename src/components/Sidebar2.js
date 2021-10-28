@@ -1,5 +1,10 @@
 import React from 'react'
 import {FaHome} from "react-icons/fa";
+import {FaCoins} from "react-icons/fa";
+import {HiAcademicCap} from "react-icons/hi";
+import {FaQuestionCircle} from "react-icons/fa";
+import {FaUserAlt} from "react-icons/fa";
+import {BiSearchAlt} from "react-icons/bi";
 export default function Sidebar2() {
     return (
         <div className="page-sidebar navbar-collapse collapse snav">
@@ -32,7 +37,7 @@ export default function Sidebar2() {
                             <input type="text" className="form-control" placeholder="Search..." />
                             <span className="input-group-btn">
                                 <a href="javascript:;" className="btn submit">
-                                    <i className="icon-magnifier" />
+                                    <BiSearchAlt />
                                 </a>
                             </span>
                         </div>
@@ -51,7 +56,7 @@ export default function Sidebar2() {
                 
                 <li className="nav-item  ">
                     <a href="javascript:;" className="nav-link nav-toggle">
-                        <i className="icon-diamond" />
+                        <FaCoins />
                         <span className="title">Fees</span>
                         <span className="arrow" />
                     </a>
@@ -214,7 +219,7 @@ export default function Sidebar2() {
                 </li>
                 <li className="nav-item  ">
                     <a href="javascript:;" className="nav-link nav-toggle">
-                        <i className="icon-puzzle" />
+                        <HiAcademicCap />
                         <span className="title">Academics</span>
                         <span className="arrow" />
                     </a>
@@ -330,7 +335,7 @@ export default function Sidebar2() {
                 </li>
                 <li className="nav-item  ">
                     <a href="javascript:;" className="nav-link nav-toggle">
-                        <i className="icon-settings" />
+                        <FaQuestionCircle />
                         <span className="title">FAQ's</span>
                         <span className="arrow" />
                     </a>
@@ -417,7 +422,7 @@ export default function Sidebar2() {
                
                 <li className="nav-item  ">
                     <a href="javascript:;" className="nav-link nav-toggle">
-                        <i className="icon-pointer" />
+                        <FaUserAlt />
                         <span className="title">Profile</span>
                         <span className="arrow" />
                     </a>

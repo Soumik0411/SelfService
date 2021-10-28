@@ -33,7 +33,7 @@ export default function Login() {
                   <img src="Assets/img/logo.png" className="logo"/>
                 </div>
                
-                <form action="/">
+                <form action="">
                   <div className="htmlForm-group">
                     <label htmlFor="text" className="sr-only"></label>
                     <input type="text" name="studentid" id="studentid" className="form-control" placeholder="Enter User ID" onChange={event => setstyling({display :'block'})}/>

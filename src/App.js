@@ -1,5 +1,9 @@
 import React from 'react';
-import { render } from "react-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 // get our fontawesome imports
 
@@ -12,19 +16,36 @@ import './App.css';
 import './components/CSS/bootstrap.min.css'
 import Header from './components/Header';
 // import Navbar from './components/Navbar';
-// import Login from './components/Login';
+import Login from './components/Login';
 
 import './components/CSS/style.css';
 // import './components/CSS/bootstrap.min.css';
-import Dashboard from './components/Dashboard'; 
+import Dashboard from './components/Dashboard';
 import Footer from './components/Footer';
 function App() {
   return (
     <>
-      
       <Header/>
+      <Router>
+      <Switch>
+        <Route exact path="/" Render={()=>{
+          return(<Login/>)
+        }}> 
+
+        </Route>
+        
+        
+        
+        
+        
+        <Route exact path="/dashboard">
+          <Dashboard/>
+
+        </Route>
+      </Switch>
+      </Router>
       {/* <Login/> */}
-      <Dashboard />
+      {/* <Dashboard /> */}
       <Footer/>
 
     </>

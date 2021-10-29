@@ -1,4 +1,6 @@
 import React, {useState, useFormInput} from "react"
+import './CSS/stylog.css'
+import './CSS/bootstrap.min.css'
 
 
 export default function Login() {
@@ -18,7 +20,7 @@ export default function Login() {
     e.preventDefault();
   }
   return (
-    <div>
+    <div className="body">
       <main className="d-flex align-items-center min-vh-100 py-3 py-md-0">
       <div className="container">
         <div className="card login-card">
@@ -30,7 +32,7 @@ export default function Login() {
             <div className="col-md-6">
               <div className="card-body">
                 <div className="brand-wrapper">
-                  <img src="Assets/img/logo.png" className="logo"/>
+                  <img src="Assets/img/logo.png" className="logLogo"/>
                 </div>
                
                 <form action="">

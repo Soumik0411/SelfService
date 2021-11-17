@@ -22,6 +22,8 @@ import Login from './components/Login';
 import './components/CSS/bootstrap.min.css';
 import Dashboard from './components/Dashboard';
 import Footer from './components/Footer';
+import Current from './components/Current';
+import Transaction from './components/Transaction';
 function App() {
   return (
     <>
@@ -43,6 +45,16 @@ function App() {
         <Route path="/dashboard">
           <Header/>
           <Dashboard/>
+          <Footer/>
+        </Route>
+        <Route path="/current">
+          <Header/>
+          <Current/>
+          <Footer/>
+        </Route>
+        <Route path="/Transaction">
+          <Header/>
+          <Transaction/>
           <Footer/>
         </Route>
         <Route path="/">

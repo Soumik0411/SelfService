@@ -3,8 +3,14 @@ import { useHistory } from 'react-router-dom'
 
 export default function Card() {
     const history=useHistory();
-    const addOnClick=()=>{
+    const viewCurrentDue=()=>{
         history.push("/current")
+    }
+    const viewPreviousDue=()=>{
+        history.push("/previous")
+    }
+    const viewUpcomingDue=()=>{
+        history.push("/upcoming")
     }
     const viewOnClick=()=>{
         history.push("/Transaction")
@@ -23,7 +29,7 @@ export default function Card() {
                             <p className="card-text">
                                 ₹ 8008 </p>
                             <div className="d-flex flex-row justify-content-between align-items-center mb-15">
-                                <a className="card-link linkBtn" onClick={addOnClick}>
+                                <a className="card-link linkBtn" onClick={viewCurrentDue}>
                                     VIEW DETAILS</a>
                                 <a href="checkout.html" className="card-link linkBtn">PAY NOW</a>
                             </div>
@@ -39,7 +45,7 @@ export default function Card() {
                             <p className="card-text">
                                 ₹ 8008 </p>
                             <div className="d-flex flex-row justify-content-between align-items-center mb-15">
-                                <a className="card-link linkBtn">
+                                <a className="card-link linkBtn" onClick={viewPreviousDue}>
                                     VIEW DETAILS</a>
                                 <a href="checkout.html" className="card-link linkBtn">PAY NOW</a>
                             </div>
@@ -57,7 +63,7 @@ export default function Card() {
                             <p className="card-text">
                                 ₹ 8008 </p>
                             <div className="d-flex flex-row justify-content-between align-items-center mb-15">
-                                <a className="card-link linkBtn">
+                                <a className="card-link linkBtn" onClick={viewUpcomingDue}>
                                     VIEW DETAILS</a>
                                 <a href="checkout.html" className="card-link linkBtn">PAY NOW</a>
                             </div>

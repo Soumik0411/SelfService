@@ -3,6 +3,7 @@ import './CSS/stylog.css'
 import './CSS/bootstrap.min.css'
 import { useHistory } from "react-router";
 import axios from "axios";
+// import {Alert} from "react-alert"
 
 
 export default function Login() {
@@ -23,14 +24,21 @@ export default function Login() {
     //   }
     const handleOnLogin=()=>{
         //history.push('/dashboard');
-        // axios.post("http://localhost:4000/verifystudent/",{
-        //     username: Username,
-        //     otp: OTP
-        // }).then(response=>{
-        //     console.log('response >>> ',response);
-        // }).catch(error=>{
-        //     console.log('error >>> ',error);
-        // });
+        axios.post("http://localhost:4000/verify-otp/",{
+            studentid:studentid,
+            otp:OTP
+        }).then(response=>{
+            console.log('response >>> ',response);
+            if(response.data.status=="success"){
+                history.push("/dashboard");
+            }
+            else{
+                alert("Please enter correct OTP...!!");
+                setOTP("")
+            }
+        }).catch(error=>{
+            console.log('error >>> ',error);
+        });
     }
     const handleOnClick = (e) => {
         setstylingOt({ display: 'block' });

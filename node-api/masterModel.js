@@ -42,6 +42,58 @@ module.exports = {
      })        
    },
 
+   update_session: function(connection,otp, controllerCallback) {    
+    var sql = " UPDATE loginotp SET IsActive='0' WHERE LoginAt < NOW() - interval 10 MINUTE AND IsActive='1'";   
+    connection.query(sql, (err, result) => {     
+      controllerCallback(err, result);      
+    })        
+  },
+
+  get_transaction: function(connection,id, controllerCallback) {    
+    var sql = " SELECT tran_date AS Transaction_date,recepept_id AS Receipt_ID,paid_amount AS Paid_amount,tran_mode AS mode from transaction_master WHERE student_id= '"+id+"' and is_synced= 'Y' ";
+    connection.query(sql, (err, result) => {     
+    controllerCallback(err, result);      
+    })     
+  }, 
+
+  get_commitment: function(connection,id, controllerCallback) {    
+    var sql = "SELECT DISTINCT(payable_amount) AS TOTAL_FEES from transaction_master WHERE student_id= 'AIS11' and is_synced= 'Y';";
+    connection.query(sql, (err, result) => {     
+    controllerCallback(err, result);      
+    })     
+  },
+
+  get_paidAmount: function(connection,id, controllerCallback) {    
+    var sql = "SELECT SUM(paid_amount) AS Total_Paid_Amount FROM transaction_master WHERE student_id='AIS11' AND is_synced='Y' AND chec='Paid'; ";
+    connection.query(sql, (err, result) => {     
+    controllerCallback(err, result);      
+    })     
+  },
+
+  get_current_dues: function(connection,id, controllerCallback) {    
+    var sql = " SELECT SUM(paid_amount) AS Current_Due from transaction_master WHERE student_id='"+id+"' and is_synced= 'Y' AND statu='Pending' AND chec='Unpaid'OR(SELECT COUNT(Statu)WHERE statu='Pending')>1;";
+    connection.query(sql, (err, result) => {     
+    controllerCallback(err, result);      
+    })     
+  },
+  get_upcoming_dues: function(connection,id, controllerCallback) {    
+    var sql = "SELECT SUM(paid_amount) AS Upcomming_Due from transaction_master WHERE student_id='"+id+"' and is_synced= 'Y'AND statu='Upcoming' AND chec='Unpaid'";
+    connection.query(sql, (err, result) => {     
+    controllerCallback(err, result); 
+  })     
+},
+ 
+       get_previous_dues: function(connection,id, controllerCallback) {    
+      var sql = "SELECT Sum(paid_amount) AS Previous_Due from transaction_master WHERE student_id='"+id+"' and is_synced= 'Y' AND statu='Pending' AND chec='Unpaid'AND tran_date<'2021-07-01';";
+      connection.query(sql, (err, result) => {     
+      controllerCallback(err, result);
+    })     
+  },
+
+  
+
+  
+
 
   // edit_customer: function(post, controllerCallback) {    
   //   var sql = " UPDATE customers SET name='"+post.name+"',address ='"+post.address+"',phone='"+post.phone+"',email='"+post.email+"',discount_rate='"+post.discount_rate+"' WHERE id='"+post.id+"'";   

@@ -3,7 +3,7 @@ import './CSS/Navbar.css'
 import './CSS/stydues.css'
 import { Accordion } from 'react-bootstrap'
 
-export default function Current() {
+export default function Upcoming() {
     const [text1, setText1] = useState("Show");
     const [text2, setText2] = useState("Show");
     const [text3, setText3] = useState("Show");
@@ -30,7 +30,7 @@ export default function Current() {
         <>
             <div className="container">
                 <Accordion>
-                    <h1 class="heading">Current Dues</h1>
+                    <h1 class="heading">Upcoming Dues</h1>
                     <Accordion.Item eventKey="0">
                     <div className="container-extra"  id="flush-headingOne">
                               <h2>  Installment Date: July 13,2020{'{'}Rs. XXXXX{'}'}
